@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarkov Database</title>
-    <link rel="stylesheet" href="styles/index.css?v=<?php echo filemtime(__DIR__.'/styles/index.css'); ?>">
+    <link rel="stylesheet" href="styles/index.css?<?php echo date('Ymd-Hi'); ?>" type="text/css">
 </head>
 <body>
     <section>
@@ -25,23 +25,11 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <ul>
-                        <li>
-                            <a href="">Maps</a>
-                        </li>
-                        <li>
-                            <a href="">Bullets</a>
-                        </li>
-                        <li>
-                            <a href="">Quests</a>
-                        </li>
-                        <li>
-                            <a href="">Items</a>
-                        </li>
-                        <li>
-                            <a href="">Other info</a>
-                        </li>
-                    </ul>
+                    <button>Maps</button>
+                    <button>Bullets</button>
+                    <button>Quests</button>
+                    <button>Items</button>
+                    <button>Others</button>
                 </div>
             </div>
         </header>
