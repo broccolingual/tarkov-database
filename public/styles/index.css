@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --color-woods: #65ab31;
+    --color-shoreline: #0068b7;
+    --color-customs: #ee7800;
+    --color-reserve: #d70035;
+    --color-interchange: #fcc800;
+    --color-factory: #6f5436;
+    --color-lab: #00a1e9;
+    --color-streetoftarkov: #9f166a;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    opacity: 0.5;
+}
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+header {
+    height: 120px;
+    width: 100%;
+    background-color: #262626;
+    color: white;
+    position: fixed;
+    box-shadow: 0 5px 10px black;
+    z-index: 100;
+}
+header .__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+header .__inner .links{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
+header .__inner .links .logo{
+}
+header .__inner .links .logo h1{
+    letter-spacing: 2px;
+    font-size: 28px;
+    border-bottom: 1px solid;
+}
+header .__inner .menu{
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+header .__inner .menu ul{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .__inner .menu ul li{
+    width: 100%;
+    text-align: center;
+}
+main {
+    min-height: 100vh;
+    margin-top: 120px;
+    color: white;
+    background-color: #7f5a83;
+    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+main .__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1em;
+}
+main .__inner .content-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-color: #262626;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 8px black;
+}
+main .__inner .content-container .flag1 {
+    width: 40%;
+    height: 200%;
+    position: absolute;
+    right: -2em;
+    background-color: white;
+    transform: rotateZ(20deg);
+    box-shadow: 0 0 0 1em white;
+    border: 2px solid;
+    z-index: 5;
+}
+main .__inner .content-container:nth-child(1) .flag1{
+    border-color: var(--color-woods);
+}
+main .__inner .content-container:nth-child(2) .flag1{
+    border-color: var(--color-shoreline);
+}
+main .__inner .content-container:nth-child(3) .flag1{
+    border-color: var(--color-customs);
+}
+main .__inner .content-container:nth-child(4) .flag1{
+    border-color: var(--color-reserve);
+}
+main .__inner .content-container:nth-child(5) .flag1{
+    border-color: var(--color-interchange);
+}
+main .__inner .content-container:nth-child(6) .flag1{
+    border-color: var(--color-factory);
+}
+main .__inner .content-container:nth-child(7) .flag1{
+    border-color: var(--color-lab);
+}
+main .__inner .content-container:nth-child(8) .flag1{
+    border-color: var(--color-streetoftarkov);
+}
+main .__inner .content-container .flag2 {
+    width: 40%;
+    height: 200%;
+    position: absolute;
+    right: -1em;
+    background-color: black;
+    transform: rotateZ(-20deg);
+}
+main .__inner .content-container:nth-child(1) .flag2{
+    background-color: var(--color-woods);
+}
+main .__inner .content-container:nth-child(2) .flag2{
+    background-color: var(--color-shoreline);
+}
+main .__inner .content-container:nth-child(3) .flag2{
+    background-color: var(--color-customs);
+}
+main .__inner .content-container:nth-child(4) .flag2{
+    background-color: var(--color-reserve);
+}
+main .__inner .content-container:nth-child(5) .flag2{
+    background-color: var(--color-interchange);
+}
+main .__inner .content-container:nth-child(6) .flag2{
+    background-color: var(--color-factory);
+}
+main .__inner .content-container:nth-child(7) .flag2{
+    background-color: var(--color-lab);
+}
+main .__inner .content-container:nth-child(8) .flag2{
+    background-color: var(--color-streetoftarkov);
+}
+main .__inner .content-container .details{
+    width: 60%;
+}
+main .__inner .content-container .details h2{
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+    border-bottom: 1px solid;
+}
+main .__inner .content-container .details table tr th{
+    padding: 0 0.5em;
+}
+main .__inner .content-container .details table tr td{
+    padding: 0 0.5em;
+}
+main .__inner .content-container .map-image{
+    width: 24%;
+    height: 100%;
+    background-color: tomato;
+    z-index: 10;
+    transform: skewX(-20deg);
+    transform-origin: 0 150%;
+    overflow: hidden;
+}
+main .__inner .content-container .map-image img{
+    width: auto;
+    height: 100%;
+    transform: skewX(20deg);
+    transform-origin: bottom left;
+}
+footer {
+    height: 80px;
+    width: 100%;
+    background-color: #262626;
+    color: white;
+}
+footer .__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
