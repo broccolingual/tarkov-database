@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarkov Database</title>
-    <link rel="stylesheet" href="styles/index.css?<?php echo date('Ymd-Hi'); ?>" type="text/css">
 </head>
 <body>
     <section>
@@ -27,19 +26,7 @@
                 <div class="menu">
                     <ul>
                         <li><a href="">Home</a></li>
-                        <li>
-                            <a href="">Maps</a>
-                            <ul>
-                                <li><a onclick="scrollToTarget('woods')">Woods</a></li>
-                                <li><a onclick="scrollToTarget('shoreline')">Shoreline</a></li>
-                                <li><a onclick="scrollToTarget('customs')">Customs</a></li>
-                                <li><a onclick="scrollToTarget('reserve')">Reserve</a></li>
-                                <li><a onclick="scrollToTarget('interchange')">Interchange</a></li>
-                                <li><a onclick="scrollToTarget('factory')">Factory</a></li>
-                                <li><a onclick="scrollToTarget('lab')">The Lab</a></li>
-                                <li><a onclick="scrollToTarget('streetsoftarkov')">Streets of Tarkov</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="">Maps</a></li>
                         <li><a href="">Bullets</a></li>
                         <li><a href="">Items</a></li>
                         <li><a href="">Tasks</a></li>
@@ -49,7 +36,7 @@
         </header>
         <main>
             <div class="__inner">
-                <div class="content-container" id="woods">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -67,13 +54,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="woods">
+                        <a>
                             <img src="images/maps/woods.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="shoreline">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -91,13 +78,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="shoreline">
+                        <a>
                             <img src="images/maps/shoreline.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="customs">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -115,13 +102,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="customs">
+                        <a>
                             <img src="images/maps/customs.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="reserve">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -139,13 +126,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="reserve">
+                        <a>
                             <img src="images/maps/reserve.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="interchange"> 
+                <div class="content-container"> 
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -163,13 +150,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="interchange">
+                        <a>
                             <img src="images/maps/interchange.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="factory">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -187,13 +174,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="factory">
+                        <a>
                             <img src="images/maps/factory.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="lab">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -211,13 +198,13 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="lab">
+                        <a>
                             <img src="images/maps/lab.png" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="content-container" id="streetsoftarkov">
+                <div class="content-container">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -235,8 +222,8 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="map-image">
-                        <a href="">
+                    <div class="map-image" id="streetsoftarkov">
+                        <a>
                             <img src="images/maps/streetsoftarkov.jpg" alt="">
                         </a>
                     </div>
@@ -250,7 +237,19 @@
                 </div>
             </div>
         </footer>
+        <div class="mapViewer" id="mapViewer">
+            <div class="__inner">
+                <div id="close"><span></span></div>
+                <div class="imageContainer">
+                    <img draggable="true" src="images/maps/customs_map.png" alt="" id="mapImageLarge">
+                    <div class="menuBar">
+                        <button id="zoom">+</button>
+                        <button id="shrink">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <script src="scripts/index.js"></script>
+    <script src="scripts/cachebusting.js"></script>
 </body>
 </html>

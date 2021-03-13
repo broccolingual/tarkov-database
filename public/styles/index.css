@@ -108,51 +108,6 @@ header .__inner .menu ul li a:hover {
     background-color: #262626;
     color: white;
 }
-header .__inner .menu ul li:hover > ul > li {
-    height: 100%;
-    overflow: visible;
-}
-header .__inner .menu ul li ul {
-    display: block;
-}
-header .__inner .menu ul li ul li {
-    height: 0;
-    width: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-}
-header .__inner .menu ul li ul li a {
-    border-top: 1px solid white;
-    box-shadow: 0 4px 8px black;
-}
-header .__inner .menu ul li ul li a:hover {
-    background-color: #262626;
-    color: white;
-}
-header .__inner .menu ul li ul li:nth-child(1) {
-    background-color: var(--color-woods);
-}
-header .__inner .menu ul li ul li:nth-child(2) {
-    background-color: var(--color-shoreline);
-}
-header .__inner .menu ul li ul li:nth-child(3) {
-    background-color: var(--color-customs);
-}
-header .__inner .menu ul li ul li:nth-child(4) {
-    background-color: var(--color-reserve);
-}
-header .__inner .menu ul li ul li:nth-child(5) {
-    background-color: var(--color-interchange);
-}
-header .__inner .menu ul li ul li:nth-child(6) {
-    background-color: var(--color-factory);
-}
-header .__inner .menu ul li ul li:nth-child(7) {
-    background-color: var(--color-lab);
-}
-header .__inner .menu ul li ul li:nth-child(8) {
-    background-color: var(--color-streetoftarkov);
-}
 main {
     min-height: 100vh;
     margin-top: 120px;
@@ -292,6 +247,9 @@ main .__inner .content-container .map-image{
 main .__inner .content-container .map-image:hover {
     animation: choice 0.5s ease alternate forwards running;
 }
+main .__inner .content-container .map-image a {
+    cursor: pointer;
+}
 main .__inner .content-container .map-image img{
     width: auto;
     height: 140%;
@@ -312,6 +270,119 @@ footer .__inner {
     justify-content: space-between;
     align-items: center;
     padding: 0 1em;
+}
+.mapViewer {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mapViewer.inview {
+    z-index: 200;
+    transition: .5s;
+}
+.mapViewer.inview .__inner {
+    height: 80%;
+    width: 90%;
+    position: relative;
+    background-color: rgba(255, 255, 255, .6);
+}
+.mapViewer.inview .__inner::before {
+    content: 'No Image';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 42px;
+    font-weight: 600;
+}
+.mapViewer.inview .__inner #close {
+    height: 48px;
+    width: 48px;
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    z-index: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.mapViewer.inview .__inner #close:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+.mapViewer.inview .__inner #close span,
+.mapViewer.inview .__inner #close span::before,
+.mapViewer.inview .__inner #close span::after {
+    content: '';
+    height: 2px;
+    width: 32px;
+    background-color: white;
+    border-radius: 2px;
+    position: absolute;
+}
+.mapViewer.inview .__inner #close span {
+    background-color: rgba(0, 0, 0, 0);
+}
+.mapViewer.inview .__inner #close span::before {
+    transform: rotate(45deg);
+}
+.mapViewer.inview .__inner #close span::after{
+    transform: rotate(-45deg);
+}
+.mapViewer.inview .__inner .imageContainer{
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    text-align: center;
+    position: relative;
+}
+.mapViewer.inview .__inner .imageContainer::-webkit-scrollbar{
+    width: 12px;
+    overflow: hidden;
+    background-color: #eee;
+}
+.mapViewer.inview .__inner .imageContainer::-webkit-scrollbar:horizontal{
+    height: 12px;
+}
+.mapViewer.inview .__inner .imageContainer::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px #262626;
+}
+.mapViewer.inview .__inner .imageContainer::-webkit-scrollbar-thumb{
+    background: #262626;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.mapViewer.inview .__inner .imageContainer::-webkit-scrollbar-corner{
+    background: #262626;
+    border-radius: 5px;
+}
+.mapViewer.inview .__inner .imageContainer img {
+    height: 100%;
+    width: auto;
+    transform: scale(1);
+}
+.mapViewer.inview .__inner .imageContainer .menuBar {
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mapViewer.inview .__inner .imageContainer .menuBar button {
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 @keyframes choice {
