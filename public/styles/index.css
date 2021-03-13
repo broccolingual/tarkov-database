@@ -65,36 +65,91 @@ header .__inner .links .logo h1{
 header .__inner .menu{
     height: 40px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
 }
-header .__inner .menu button {
+header .__inner .menu ul {
     height: 100%;
     width: 100%;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border: 1px solid;
+    display: flex;
 }
-header .__inner .menu button:nth-child(1) {
+header .__inner .menu ul li {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+header .__inner .menu ul li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+header .__inner .menu ul li:nth-child(1) {
     background-color: #558C74;
 }
-header .__inner .menu button:nth-child(2) {
+header .__inner .menu ul li:nth-child(2) {
     background-color: #CDC187;
 }
-header .__inner .menu button:nth-child(3) {
+header .__inner .menu ul li:nth-child(3) {
     background-color: #F1B075;
 }
-header .__inner .menu button:nth-child(4) {
+header .__inner .menu ul li:nth-child(4) {
     background-color: #E55241;
 }
-header .__inner .menu button:nth-child(5) {
+header .__inner .menu ul li:nth-child(5) {
     background-color: #CDC187;
 }
-header .__inner .menu button:hover {
+header .__inner .menu ul li a:hover {
     background-color: #262626;
     color: white;
+}
+header .__inner .menu ul li:hover > ul > li {
+    height: 100%;
+    overflow: visible;
+}
+header .__inner .menu ul li ul {
+    display: block;
+}
+header .__inner .menu ul li ul li {
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+}
+header .__inner .menu ul li ul li a {
+    border-top: 1px solid white;
+}
+header .__inner .menu ul li ul li a:hover {
+    background-color: #262626;
+    color: white;
+}
+header .__inner .menu ul li ul li:nth-child(1) {
+    background-color: var(--color-woods);
+}
+header .__inner .menu ul li ul li:nth-child(2) {
+    background-color: var(--color-shoreline);
+}
+header .__inner .menu ul li ul li:nth-child(3) {
+    background-color: var(--color-customs);
+}
+header .__inner .menu ul li ul li:nth-child(4) {
+    background-color: var(--color-reserve);
+}
+header .__inner .menu ul li ul li:nth-child(5) {
+    background-color: var(--color-interchange);
+}
+header .__inner .menu ul li ul li:nth-child(6) {
+    background-color: var(--color-factory);
+}
+header .__inner .menu ul li ul li:nth-child(7) {
+    background-color: var(--color-lab);
+}
+header .__inner .menu ul li ul li:nth-child(8) {
+    background-color: var(--color-streetoftarkov);
 }
 main {
     min-height: 100vh;

@@ -25,17 +25,31 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <button>Maps</button>
-                    <button>Bullets</button>
-                    <button>Quests</button>
-                    <button>Items</button>
-                    <button>Others</button>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li>
+                            <a href="">Maps</a>
+                            <ul>
+                                <li><a onclick="scrollToTarget('woods')">Woods</a></li>
+                                <li><a onclick="scrollToTarget('shoreline')">Shoreline</a></li>
+                                <li><a onclick="scrollToTarget('customs')">Customs</a></li>
+                                <li><a onclick="scrollToTarget('reserve')">Reserve</a></li>
+                                <li><a onclick="scrollToTarget('interchange')">Interchange</a></li>
+                                <li><a onclick="scrollToTarget('factory')">Factory</a></li>
+                                <li><a onclick="scrollToTarget('lab')">The Lab</a></li>
+                                <li><a onclick="scrollToTarget('streetsoftarkov')">Streets of Tarkov</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Bullets</a></li>
+                        <li><a href="">Items</a></li>
+                        <li><a href="">Tasks</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
         <main>
             <div class="__inner">
-                <div class="content-container">
+                <div class="content-container" id="woods">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -59,7 +73,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="shoreline">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -83,7 +97,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="customs">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -107,7 +121,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="reserve">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -131,7 +145,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="interchange"> 
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -155,7 +169,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="factory">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -179,7 +193,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="lab">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -203,7 +217,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="content-container">
+                <div class="content-container" id="streetsoftarkov">
                     <div class="flag1"></div>
                     <div class="flag2"></div>
                     <div class="details">
@@ -237,5 +251,6 @@
             </div>
         </footer>
     </section>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
