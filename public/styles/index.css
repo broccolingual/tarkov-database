@@ -85,6 +85,7 @@ header .__inner .menu ul li a {
     cursor: pointer;
     font-weight: 600;
     font-size: 18px;
+    text-shadow: 0 0 4px black;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -122,6 +123,7 @@ header .__inner .menu ul li ul li {
 }
 header .__inner .menu ul li ul li a {
     border-top: 1px solid white;
+    box-shadow: 0 4px 8px black;
 }
 header .__inner .menu ul li ul li a:hover {
     background-color: #262626;
@@ -177,6 +179,9 @@ main .__inner .content-container {
     align-items: center;
     overflow: hidden;
     box-shadow: 0 0 8px black;
+}
+main .__inner .content-container:last-child {
+    margin-bottom: 0;
 }
 main .__inner .content-container .flag1 {
     width: 40%;
@@ -248,10 +253,14 @@ main .__inner .content-container:nth-child(8) .flag2{
 main .__inner .content-container .details{
     width: 60%;
 }
-main .__inner .content-container .details h2{
+main .__inner .content-container .details h2 {
     margin-bottom: 0.5em;
     margin-left: 0.5em;
     border-bottom: 1px solid;
+}
+main .__inner .content-container .details h2 span {
+    padding-left: 0.6em;
+    font-size: 16px;
 }
 main .__inner .content-container .details table {
     position: relative;
@@ -263,6 +272,13 @@ main .__inner .content-container .details table tr th{
 }
 main .__inner .content-container .details table tr td{
     padding: 0 0.5em;
+}
+main .__inner .content-container .details a {
+    text-decoration: underline;
+    color: orange;
+}
+main .__inner .content-container .details a:hover {
+    opacity: .5;
 }
 main .__inner .content-container .map-image{
     width: 24%;
