@@ -337,7 +337,7 @@ footer .__inner {
 .mapViewer.inview .__inner #close span::after{
     transform: rotate(-45deg);
 }
-.mapViewer.inview .__inner .imageContainer{
+.mapViewer.inview .__inner .imageContainer {
     height: 100%;
     width: 100%;
     overflow: scroll;
@@ -369,7 +369,7 @@ footer .__inner {
 .mapViewer.inview .__inner .imageContainer img {
     height: 100%;
     width: auto;
-    transform: scale(1);
+    cursor: pointer;
 }
 .mapViewer.inview .__inner .imageContainer .menuBar {
     position: fixed;
@@ -383,6 +383,15 @@ footer .__inner {
     cursor: pointer;
     font-weight: 600;
     font-size: 18px;
+}
+.mapViewer.inview .__inner .imageContainer .coordinate {
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    z-index: 500;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: left;
 }
 
 @keyframes choice {

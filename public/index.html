@@ -240,11 +240,16 @@
         <div class="mapViewer" id="mapViewer">
             <div class="__inner">
                 <div id="close"><span></span></div>
-                <div class="imageContainer">
+                <div class="imageContainer" id="imageContainer">
                     <img draggable="true" src="images/maps/customs_map.png" alt="" id="mapImageLarge">
                     <div class="menuBar">
+                        <button id="reset">R</button>
                         <button id="zoom">+</button>
                         <button id="shrink">-</button>
+                    </div>
+                    <div class="coordinate">
+                        <div id="x">X: ?</div>
+                        <div id="y">Y: ?</div>
                     </div>
                 </div>
             </div>
