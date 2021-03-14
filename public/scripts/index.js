@@ -32,31 +32,58 @@ const close = document.getElementById('close');
 close.addEventListener('click', function() {
     mapViewer.classList.remove('inview');
     mapImageLarge.style.position = 'static'
+    changeScale(1)
 });
 
 // Map Viewer reset position
 const reset = document.getElementById('reset');
 reset.addEventListener('click', function(){
     mapImageLarge.style.position = 'static'
+    changeScale(1)
 });
 
 // Map Viewer zoom
 const zoom = document.getElementById('zoom');
 zoom.addEventListener('click', function(){
-    alert('座標の差分の計算めんどくさいから実装してないよ。')
+    changeScale(2)
 });
 
 // Map Viewer shrink
 const shrink = document.getElementById('shrink');
 shrink.addEventListener('click', function(){
-    alert('座標の差分の計算めんどくさいから実装してないよ。')
+    changeScale(1)
 });
+
+function changeScale(scale) {
+    var magnification = document.getElementById('magnification');
+    mapImageLarge.style.transform = `scale(${scale})`;
+    magnification.innerHTML = `${scale}x`
+}
+
+function getCurrentScale() {
+    var magnification = mapImageLarge.style.transform;
+    if (magnification !== "") {
+        var magnificationValues = magnification.split('(')[1];
+        magnificationValues = magnificationValues.split(')')[0];
+        magnificationValues = magnificationValues.split(',');
+        return Number(magnificationValues[0]);
+    }else {
+        return 1;
+    }
+}
 
 // Map Viewer Drag & Drop
 mapImageLarge.onmousedown = function(e) {
+    // Get image size
+    var imgWidth = mapImageLarge.clientWidth;
+    var imgHeight = mapImageLarge.clientHeight;
+
+    // Get current scale
+    var scale = getCurrentScale();
+
     var imageContainer = document.getElementById('imageContainer');
-    var diffWidth = ((window.innerWidth - imageContainer.clientWidth) / 2) - 14;
-    var diffHeight = ((window.innerHeight - imageContainer.clientHeight) / 2) - 5;
+    var diffWidth = ((window.innerWidth - imageContainer.clientWidth) / 2) - 8;
+    var diffHeight = ((window.innerHeight - imageContainer.clientHeight) / 2) + 0.5;
 
     var shiftX = e.clientX - mapImageLarge.getBoundingClientRect().left + diffWidth;
     var shiftY = e.clientY - mapImageLarge.getBoundingClientRect().top + diffHeight;
@@ -67,8 +94,13 @@ mapImageLarge.onmousedown = function(e) {
     moveAt(e.clientX, e.clientY);
 
     function moveAt(clientX, clientY) {
-        mapImageLarge.style.left = clientX - shiftX + 'px';
-        mapImageLarge.style.top = clientY - shiftY + 'px';
+        if (scale === 1) {
+            mapImageLarge.style.left = clientX - shiftX + 'px';
+            mapImageLarge.style.top = clientY - shiftY + 'px';
+        }else {
+            mapImageLarge.style.left = clientX - shiftX + imgWidth/2 + 'px';
+            mapImageLarge.style.top = clientY - shiftY + imgHeight/2 + 'px';
+        }
     }
     
     var x = document.getElementById('x');
@@ -89,13 +121,6 @@ mapImageLarge.onmousedown = function(e) {
     }
 
     document.addEventListener('mousemove', onMouseMove);
-}
-
-mapImageLarge.onmouseup = function() {
-    mapImageLarge.onmouseup = null;
-    mapImageLarge.style.cursor = 'pointer';
-    x.innerHTML = `X: ?`;
-    y.innerHTML = `Y: ?`;
 }
 
 mapImageLarge.ondragstart = function() {
