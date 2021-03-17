@@ -135,6 +135,17 @@ main .__inner .content-container {
     overflow: hidden;
     box-shadow: 0 0 8px black;
 }
+main .__inner .content-container.twitch {
+    height: 100%;
+}
+#twitchFrame {
+    min-height: 378px;
+    width: 100%;
+}
+#twitchChatFrame {
+    min-height: 378px;
+    width: 300px;
+}
 main .__inner .content-container:last-child {
     margin-bottom: 0;
 }
