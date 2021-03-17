@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarkov Database</title>
+
+    <!-- Twitch Player -->
+    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 </head>
 <body>
     <section>
@@ -37,7 +40,7 @@
         <main>
             <div class="__inner">
                 <div class="content-container flex">
-                    <iframe id='twitchFrame' src="https://player.twitch.tv/?channel=lvndmark&parent=tarkovdatabase.web.app" frameborder="0" scrolling='no' allowfullscreen='true'></iframe>
+                    <div id='twitchFrame'></div>
                     <iframe id='twitchChatFrame' src="https://www.twitch.tv/embed/lvndmark/chat?parent=tarkovdatabase.web.app" frameborder="0" scrolling='no'></iframe>
                 </div>
                 <div class="content-container flex">
@@ -265,5 +268,14 @@
         </div>
     </section>
     <script src="scripts/cachebusting.js"></script>
+    <script type="text/javascript">
+        var options = {
+            height: 378,
+            width: '100%',
+            channel: ['pestily'],
+        };
+        var player = new Twitch.Player('twitchFrame', options);
+        player.setVolume(0.0);
+    </script>
 </body>
 </html>
