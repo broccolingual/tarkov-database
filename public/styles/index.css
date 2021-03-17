@@ -135,7 +135,7 @@ main .__inner .content-container {
     overflow: hidden;
     box-shadow: 0 0 8px black;
 }
-main .__inner .content-container.twitch {
+main .__inner .content-container.flex {
     height: 100%;
 }
 #twitchFrame {
@@ -145,6 +145,14 @@ main .__inner .content-container.twitch {
 #twitchChatFrame {
     min-height: 378px;
     width: 300px;
+}
+#youtubeFrame {
+    min-height: 378px;
+    width: 100%;
+}
+#twitterFrame {
+    min-height: 378px;
+    width: 400px;
 }
 main .__inner .content-container:last-child {
     margin-bottom: 0;
