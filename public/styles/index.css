@@ -381,3 +381,9 @@ footer .__inner {
         width: 30%;
     }
 }
+
+@media screen and (max-width:1024px){
+    #twitchChatFrame {
+        display: none;
+    }
+}
